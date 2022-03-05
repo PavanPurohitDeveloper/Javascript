@@ -1,0 +1,1019 @@
+JavaScript:
+============
+1. Text editor - Visual Studio Code
+2. NodeJs must be installed
+3. GitHub account
+
+https://github.com/Aakashdeveloper/june_javascript_mrng_21
+akashhanda github
+
+### Extensions to be installed in your Visual Studio Code:
+-----------------------------------------------------------
+> Auto close
+> Es Lint
+> Git History
+> Git Lens
+> Tab Nine
+
+### which version of JavaScript you using ?
+ES - Ecma Script
+Ecma Script is the way to tell that, which version of JavaScript you using.
+
+JavaScript dont have any version.
+Ecma Script is the standard way of writing JavaScript.
+Es5
+Es6
+Es7
+
+we can have half code in Es5, half code in Es6..this is just standard way of writing JavaScript.
+In Each version -- something new added.. something old is removed.
+
+>>> DataType:
+--------------
+What kind of data it supports..
+3 major datatypes:
+1. String
+2. Number
+3. Boolen
+
+two more datatypes:
+4. null
+5. undefined
+
+String:
+-------
+Any number..
+Any combination of string + number..
+Any boolen..
+Anything that comes in the quote is a string( single quote or double quote or backtick)
+Everything is string..
+> "Hii" 'hey' 'hello' '35345' 'df34' 'true' "false" `JavaScript`
+
+Number:
+--------
+Any Numeric value..whether a single number, double digit or decimal ..is a Number.
+There is nothing float or double..
+> 35 4 33464645 4534.4634 .4643
+
+Boolen:
+--------
+Either true or false.. is a boolean
+> true false
+
+////////////////
+Declare variable in Es5
+using keyword == var
+
+var a = 10 
+var b = "Hi"
+var c = true
+
+### How to know what what type of datatype is ?
+typeof(a)
+
+typeof(a)
+"number"
+typeof(b)
+"string"
+typeof(c)
+"boolean"
+
+var d = "11"
+typeof(d)
+"string"
+
+var e = 'Hello'
+typeof(e)
+"string"
+
+var f = 10.11
+typeof(f)
+"number"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var a = 10
+undefined
+
+var b = 20
+undefined
+
+a+b (addition)
+30
+
+b-a  ( subtraction )
+10
+
+b-a
+10
+
+a-b
+-10
+
+a*b  (multiplication)
+200
+
+a/b  (division)
+0.5
+
+a%b  ( modules ) 
+10
+
+4%4  reminder is 0
+0
+
+4%2
+0
+
+>>> Imp Intv Qn
+logic: modules of smaller to larger is always smaller.
+2%4
+2
+
+3%4
+3
+
+4%4
+0
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+///////////
+var a = "Hi"
+var b = "JavaScript"
+
+a+b (concat)
+"HiJavaScript"
+
+a-b
+NaN (not a number)
+
+a*b
+NaN
+
+a/b
+NaN
+
+>>> logic: + operator - When we use with number its addition.
+					  - When we use with String its concat.. It will give one value..
+					  - If you use any other operator with String it will give you NaN..
+
+>> If we mix what happens:
+var a = "hi"
+var b = 10
+a+b
+"hi10"
+
+b+a 
+"10hi"
+
+a-b
+NaN
+
+>>> 
+string+string = string
+string+number = string
+number+string = string
+number+number = number
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+>>> Imp Intv Qn
+10+"20"+30
+	 "1020"+30  ( start from left to right)
+  > "102030"
+
+10+20+"30"
+	30+"30"
+  > "3030"
+
+"10"+20+30
+	"1020"+30
+  >	"102030"
+
+>>> Imp Intv Qn
+here Logic: If both the side of the operator, If its a pure numeric value then except + is Concat, 
+			every single/All operator will work as MATH (-, *, /, % )			
+		>> If both side pure Number except + every operator will work..
+10+"20"+30-1
+	"102030"-1 
+  >102029   
+
+10+20+"30"-1
+	"3030"-1
+  > 3029
+
+"10"+20+30-1
+	"102030"-1
+  > 102029
+
+"10"+1
+"101"
+
+"10"-1
+9
+
+10-"1"
+9
+
+"10"*"2"
+20
+
+"10"/'2'
+5
+
+10/'2'
+5
+
+'10'/2
+5
+
+But In case if its having any string there.. its a NaN.
+If any side its having a any charcater it is a NaN.
++ will still concat.
+"10a"-1
+NaN
+
+10-'a1'
+NaN
+
+10-'1a'
+NaN (not a number)
+
+>>> Imp Intv Qn:
+20-"1"+"10"-1 =1909
+	19+"10"
+	"1910"-1 
+	1909
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Boolean:
+--------
+var a = true
+var b = true
+var c = false
+
+true is equal to 1
+false is equal to 0 
+
+a+b
+2
+
+a+c 
+1
+
+10+true
+11
+
+10/false
+Infinity
+
+10-true
+9
+
+"hi"-true
+NaN    //here string is culprit
+
+"hi"+true
+"hitrue" //concat
+
+"10"-true
+9  // here its pure numeric in double quote..
+
+"10a"-true
+NaN      //any character it becomes NaN
+
+"10a"+true
+"10atrue" 
+
+>> Anything that combine with the String will Conact or give you NaN..
+
+"true"+"true"
+"truetrue"  
+
+"true"-"true"
+NaN    // In case of - will give you NaN..
+
+"10"-"2"
+8
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+////////////////
+var a = "10"
+var b = "2"
+a+b
+"102
+
+var a = "10"
+var b = "2"
+undefined
+a+b
+"102"  // Here I want 12 instead of "102"
+
+parseInt(a)  //convert that into a pure number.. It will take only number.
+10
+
+var c = "hii"
+parseInt(c)
+NaN
+
+parseInt(a)+parseInt(b)
+12
+
+>> Example:
+var a= "10.11"
+var b = "20.14"
+
+parseInt(a)+parseInt(b)
+30   //here It will take only number.
+
+parseFloat(a)+parseFloat(b)
+30.25
+
+var c = "11"
+parseFloat(a)+parseFloat(b)+parseFloat(c)
+41.25
+
+>> parseInt -- If you want value without decimal.. pure interger.. then go for parseInt
+>> parseFloat()  -- If you looking integer with decimal you go for parseFloat
+>> Number() -- works like a parseFloat.. better synatx.. Es6 version..
+
+Number(a)+Number(b)
+30.25
+
+Number(a)+Number(b)+Number(c)
+41.25
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//Example:
+var a = "10.11"
+var b = "20.33"
+a+b
+"10.1120.33"
+
+parseInt("10.1120.33")
+10
+
+parseFloat("10.1120.33")
+10.112
+
+var b = "20.5645467454"
+parseFloat(b)
+20.5645467454
+
+var b = "10.1120.33"
+parseFloat(b)
+10.112
+
+var b = "10.1125.33"
+parseFloat(b)
+10.1125
+
+var b = "10.112544.88"
+parseFloat(b)
+10.112544
+
+Number(b)
+NaN
+
+var a = NaN
+typeof(a)
+"number"
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+>>> Imp Intv Qn:
+var a = "Delhi10"
+var b = "1011Delhi10"
+var c = "10Delhi"
+
+parseInt(a)
+NaN  	// It is NaN ..
+Logic: If the value starts with the String then It will give NaN always..
+       If it is starting with the Number till the point it is getting the Number..as soon as it interacts with String 
+	   it will stop there itself.. After String it will not care..
+parseInt(b)
+1011
+
+parseInt(c)
+10
+
+//ES6 part.. for Number() everything is NaN.
+Number(a)
+NaN
+
+Number(b)
+NaN
+
+Number(c)
+NaN
+
+parseFloat(a)
+NaN
+
+parseFloat(b)
+1011
+
+parseFloat(c)
+10
+
+>>>>>>>>>>>>>>>>
+var a = "10.11"
+var b = "20.33"
+a+b
+"10.1120.33"
+
+parseInt("10.1120.33")
+10
+
+parseFloat("10.1120.33")
+10.112
+
+var b = "20.5645467454"
+parseFloat(b)
+20.5645467454
+
+var b = "10.1120.33"
+parseFloat(b)
+10.112
+
+var b = "10.1125.33"
+parseFloat(b)
+10.1125
+
+var b = "10.112544.88"
+parseFloat(b)
+10.112544  //Upto 1 decimal it will take..
+
+Number(b)
+NaN
+
+var a = NaN
+typeof(a)
+"number"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+>>> String Literals:  ( using backtick ``)
+---------------------
+var name = "Avenger"
+var rating  = 4.5
+var type = "action"
+var ind = "Hollywood"
+
+//Es5
+var out = "An "+name+" is an "+type+" movie with rating of "+rating+" and from ind "+ind+"."
+out
+"An Avenger is an action movie with rating of 4.5 and from ind Hollywood."
+
+//es6
+var out = `An ${name} is an ${type} movie with rating of ${rating} and from ind ${ind}.`
+"An Avenger is an action movie with rating of 4.5 and from ind Hollywood."
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Operators:
+-----------
+=    --> assignment
+
+==   --> compare the data
+
+===  --> compare the data and datatype 
+
+var a = 10;
+var b = 5;
+var c = "10";
+
+a == c  > compare the data 
+true
+
+a === c > compare the data and dataType
+false
+
+a == b 
+false
+
+a===b
+false
+
+>> If == is false then === is always false.
+
+var d = 10
+a == d
+true
+
+a === d
+true
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var a = 10;
+var b = 5;
+undefined
+a>b
+true
+
+a<b
+false
+
+a !==b 
+true
+
+a != b
+true
+
+a >= b 
+true
+
+a => b  //This represents function. dont write like this.
+a => b
+
+a <= b
+false
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+var a = 10;
+var c = "10";
+
+a != c  > compare the data   //here its ==
+false
+
+a !== c > compare the data and dataType  //here its ===  ...we dont use !=== c 
+true
+
+a == c
+true
+
+a===c
+false
+
+> All the compare operator will always return boolean output
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//negation (!): is also way of operator .. works like Opposite
+
+var a = true
+!a  //exclamatory of a is false..
+false
+
+var a = false
+!a
+true 
+
+>>> Imp Intv Qn:
+var a = 1 
+!a
+false  //It comes under boolean
+
+var b = 0
+!b
+true  //It comes under boolean
+Logic: true is equal to 1 ; false is equal to 0
+
+>>>>>>>>>>>>>>
+var a = 2 
+!a
+false
+//Logic behind is: Basically in the JavaScript there are 2 kind of values - "truthy" and "falsy" values.
+  truthy > any number except 0 weather +ve or -ve , string , true -- All are truthy value... Opposite of them is always false.
+  falsy > 0 , false, null ,undefined   -- All are the falsy values.
+
+var b = "hi"
+!b
+false
+
+var c = -1
+!c
+false
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+isNaN(): (is not a number)
+========
+var a = 1
+var b = "hiii"
+var c = "1"
+(is not a number)
+
+>> Logic: isNaN will give true for string
+		  false for number
+
+isNaN(a) (is 1 is not a number) (no its  a number)
+false
+
+isNaN(b) (as "hii" is not a number)
+true
+
+isNaN(c)
+false
+
+//How it behaves for boolean
+var  d= true 
+isNaN(d)
+false   // (is d is not a number ) (yes its  not a number) .. true is counted as 1. (is 1 is not a number) (no its  a number)
+
+var a ="1a"
+isNaN(a)
+true   //it becomes string as 1 character came after 1.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//////////////
+var a = "hii"
+parseInt(a)
+NaN
+
+var b = NaN
+typeof(b)
+"number"  //type of NaN is number.
+
+NaN = 0
+0
+
+NaN == 1
+false
+
+NaN == 0
+false
+
+NaN+1
+NaN
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+console.log() >>>>>> is used for checking output and debugging
+alert() >>>>> is used for notification
+prompt() >>> to take input from user 
+confirm() >> to check weather yes or no 
+
+alert("Form submitted")
+alert("Slot is full")
+
+>>>>>>>>>>>>>>
+confirm("Do you want to leave")  //If i click "OK" it will give true
+true
+
+confirm("Do you want to leave")  //If i click "Cancel" it will give false
+false
+
+var out = confirm("Do you want to leave")
+out
+true
+
+var out = confirm("Do you want to leave")
+out
+false
+
+>>>>>>>>>>>>>>
+prompt("What is your name")
+"Aakash"
+
+prompt("What is your age")
+"10"
+
+>> All the value it will come to you in the form of "String" to us.
+
+var a = prompt("Enter first number");
+var b = prompt("Enter second number");
+alert(a+b)
+"1011" //basically it concatenating ( string + string = Concat )
+
+var a = prompt("Enter first number");"10.13"
+var b = prompt("Enter second number");"20.65"
+alert(Number(a)+Number(b))  //ParseInt() will not give better respose so better go for Number()
+30.78
+
+//If I write like this
+var a = prompt("Enter first number"); "10.13"
+var b = prompt("Enter second number"); "20.65"
+alert(Number(a+b))
+NaN  //Number will work for pure Number.
+
+var a = prompt("Enter first number"); "10"
+var b = prompt("Enter second number"); "20"
+alert(parseFloat(a+b))
+1020
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### String Operations:
+-----------------------
+var city = "LonDon";
+undefined
+
+city.toUpperCase()  //convert All the value into UpperCase
+"LONDON"
+
+city.toLowerCase()  //convert All the value into LowerCase
+"london"
+
+var city = "LonDon";
+undefined
+
+//I can read the each character of a String also
+city[0]  //will get the first value/letter based on index ( 0 means first value )
+"L"
+
+city[1]  //1 means second value
+"o"
+
+city.length  //length is always total number of characters
+6
+
+city[5]
+"n"
+
+city[city.length-1]  //It will always give me the last character
+"n"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+trim() -- remove all the spaces which are before or all the spaces which are after any character anything it finds..It cannot remove middle space ( "  Nikita .   " )
+
+var name = "  Nikita   "   
+undefined
+
+name.length
+11
+
+name.trim()  // It will trim all the extra spaces.
+"Nikita"
+
+var out = name.trim()  //will store in a variable after trimming the extra spaces.
+undefined
+
+out.length
+6
+
+var name = "  Nikita .   "
+undefined
+
+name.trim()
+"Nikita ."
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Java Script is case sensitive.
+ 
+var a= "john"  //this is in lower case
+var b = "John"  //this is in upper case
+a == b 
+false
+
+
+//user can enter either in lower case or upper case
+var a= "john"
+var b = "John"
+a.toLowerCase() == b.toLowerCase() 
+true
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+slice(): 
+ - How many values you want to remove..
+ - It will remove letter from the begining, whatever you type.
+ - If we give range it will starts index.
+
+charAt()
+ - charAt() is taking Index number.
+
+var city = "amSteRDam" (Amsterdam)
+
+var city = "amSteRDam"
+undefined
+
+city.slice(1)  //It will remove 1 letter from the begining, whatever you type
+"mSteRDam"
+
+city.slice(2) //It will remove 2 letter from the begining
+"SteRDam"
+
+city.slice(3) //It will remove 3 letter from the begining
+"teRDam"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+charAt(): we can use either slice() or charAt() it will give same output.
+		
+var city = "amSteRDam"
+undefined
+
+city.charAt(0)
+"a"
+
+city.charAt(1)
+"m"
+
+city[0]
+"a"
+
+>>> Imp Intv Qn >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//I want to convert first letter into uppercase and rest all into lowercase.
+var city = "amSteRDam"
+city.charAt(0).toUpperCase()  //converts only first letter into uppercase.
+"A"
+
+city.slice(1).toLowerCase()   //remove first letter and converts rest all into lowercase
+"msterdam"  
+
+city.charAt(0).toUpperCase()+city.slice(1).toLowerCase()  //combine together above 2 lines of code.
+"Amsterdam"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var city = "amSteRDam"
+// provide value between range..start index and end index
+city.slice(2,5) //starting from 2nd till the 5 it will give that value.. it wil not consider 5th value..starts from 0,1
+"Ste"
+
+city.slice(2,6)  //starting from 2nd till the 6th it will give that value..
+"SteR"
+
+city.slice(1,3)
+"mS"
+
+// remove first 2 letter
+city.slice(2)
+"SteRDam"
+
+// -ve - provide value from last
+city.slice(-1)  //It will give last value
+"m"
+
+city.slice(-2)  //It will give last 2 values
+"am"
+
+
+// +ve and -ve ( remove from start and -ve remove for end)
+city.slice(0,-1)  //give me without last value..It will remove no value from begining and remove 1 value from last.
+"amSteRDa"
+
+city.slice(0,-2)  //It will not give last 2 values...No value from the begining and 2 value from the last
+"amSteRD"
+
+city.slice(3,-3)  //It will remove 3 character from the begining and 3 character from the last.
+"teR"
+
+city.slice(1,-3) //It will remove 1 character from the begining and 3 character from the end.
+"mSteR"
+
+city.slice(0,-1)  //It will remove no character from begining and it will remove 1 character from the end.
+"amSteRDa"
+
+// -ve and +ve  no output
+city.slice(-4,1)  //no output..If first value is negative and second is positive it will not give any output.. 
+""
+
+city.slice(-1,4)
+""
+
+//If first positive and second negative then it will remove that many character from the begining and that many character from the end.
+city.slice(4,4)   
+""
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var city = "amSteRDam"
+
+// If first -ve is greater == no output..-1 is bigger than -4..
+city.slice(-1,-4)  //If both negative 
+""
+
+// In this case If first -ve is small then range start from last
+city.slice(-4, -1)
+"RDa"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+city.slice(start,end) //slice() takes start and end
+city.substr(start,length)  //substr() takes start and length
+
+var city = "amSteRDam"
+
+city.slice(2,5)  //starting from 2nd till 5
+"Ste"
+
+city.substr(2,5)  //starting from 2nd till 5 character it will give output.
+"SteRD"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+includes():
+indexOf(): 
+
+var city = "amSteRDam"
+
+city.includes('a') //we can check this character is present or not.include will tell you is that value is present or not.
+true
+
+city.indexOf('a')  //It will tell you first occurence ..indexOf() will tell you on which index number it is present.
+0
+
+city.indexOf('D')
+6
+
+city.indexOf('y')  //if that value is not part of character. indexOf() will give you -1
+-1
+
+city.includes('y') //if that value is not part of character. includes() will give false.
+false
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+replace():
+
+var a = "i am learning javascript"
+undefined
+
+a.replace('javascript','js') //it will replace the value
+"i am learning js"
+
+var a = "javascript i am learning javascript"
+undefined
+
+a.replace('javascript','js')   //It will replace the first occurrence by removing
+"js i am learning javascript"
+
+a.replace(/javascript/g,'js') //It want to replace all occurrence. /g is global
+"js i am learning js"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+replace(): 
+
+var name = "  Nikita .   "
+undefined
+
+name.replace(/ /g,'')  //replace all the spaces with nothing.
+"Nikita."
+
+name.replace(/ /g,'-')  //replace all the spaces with hephen.
+"--Nikita-.---"
+
+var name = "Nikita Verma"
+undefined
+
+name.replace(/ /g,'-') 
+"Nikita-Verma"
+
+var name = "NikitaVerma"  //separate the last name from here.. here we need to write a logic.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+split(): split each character got 0 index, first index ..etc
+
+var url = "https://github.com/Aakashdeveloper/Create-node-app"
+undefined
+
+//here I want this name - Create-node-app
+
+url.split('/')  //Each character got 0 index, 1st index, 2nd index etc..
+(5) ["https:", "", "github.com", "Aakashdeveloper", "Create-node-app"]0: "https:"1: ""2: "github.com"3: "Aakashdeveloper"4: "Create-node-app"length: 5__proto__: Array(0)
+
+url.split('/')[4]
+"Create-node-app"
+
+var a = url.split('/')[4]
+undefined
+
+var a = url.split('/')
+undefined
+a
+(5) ["https:", "", "github.com", "Aakashdeveloper", "Create-node-app"]
+
+a[a.length-1]  //whatever length is there I always get the last value
+"Create-node-app"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var a = "javascript i am learning javascript"
+undefined
+
+a.split(' ') //split with space..common is spaces here
+(5) ["javascript", "i", "am", "learning", "javascript"]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//to split each word separate
+
+var a = "javascript";
+undefined
+
+a.split('')   //split with nothing.. to split each word separate..
+(10) ["j", "a", "v", "a", "s", "c", "r", "i", "p", "t"]
+
+//bring it back to normal string..
+var a = ["j", "a", "v", "a", "s", "c", "r", "i", "p", "t"]
+a.toString()
+
+"j,a,v,a,s,c,r,i,p,t"
+
+//convert number into string
+var a = 10
+undefined
+
+a.toString()
+"10"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+var a = ["j", "a", "v", "a", "s", "c", "r", "i", "p", "t"]
+a.toString()
+"j,a,v,a,s,c,r,i,p,t"
+
+var out = a.toString()
+undefined
+
+out.replace(/,/g,'')
+"javascript"
+
+a.toString().replace(/,/g,'')  //bring back to word.
+"javascript"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
