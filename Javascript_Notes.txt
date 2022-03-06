@@ -877,10 +877,10 @@ city.substr(start,length)  //substr() takes start and length
 
 var city = "amSteRDam"
 
-city.slice(2,5)  //starting from 2nd till 5
+city.slice(2,5)  //it will give value between 2 to 5..starting from 2nd till 5..
 "Ste"
 
-city.substr(2,5)  //starting from 2nd till 5 character it will give output.
+city.substr(2,5)  //starting from 2nd till 5 character/letter it will give output.
 "SteRD"
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -1012,6 +1012,312 @@ a.toString().replace(/,/g,'')  //bring back to word.
 "javascript"
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Math Operations:
+-----------------
+## Math.random():
+-----------------
+- it gives me random number in decimal. By default its decimal number.
+
+Math.random()   //it gives me random number in decimal. By default its decimal number.
+0.5232745801915639
+
+Math.random()*10  //multiple by 10 it give random number.. It gives the number range between 0.1 to 10
+7.7335707784256265
+
+Math.random()*100 //It gives the number between 0.1 to 100 ..
+22.146850486365686
+
+Math.random()*1000   //It gives the number between 0.1 to 1000 ..
+706.6470727699996
+
+Math.random()*10000 //It gives the number between 0.1 to 10000 ..
+4234.639258295205
+
+Math.random()*10000
+467.5287235665149
+
+## Math.floor(): 
+---------------- 
+- It always tend towards the lower side. It always give lower value.
+- It gives me pure integer/number
+
+Math.floor(10.1)
+10
+
+Math.floor(10.4)
+10
+
+Math.floor(10.9)
+10
+
+## Math.ceil():
+---------------- 
+- It always tend towards the upper side. It always give upper value.
+- It gives me pure integer/number
+- Both floor and ceil gives me pure integer/number.
+
+Math.ceil(10.1)
+11
+Math.ceil(10.4)
+11
+Math.ceil(10.9)
+11
+
+Math.floor(467.5287235665149)  //it gives me integer value
+467
+
+Math.floor(Math.random()*10000)
+906
+
+Math.floor(Math.random()*10000)
+4829
+
+Math.floor(Math.random()*10000)
+4793
+
+## Math.round(): 
+---------------- 
+- If anythig less than 0.5 it tend towards lower side.
+- 5 or above 0.5 it tend towards higher side.
+
+Math.round(10.1)
+10
+
+Math.round(10.4)
+10
+
+Math.round(10.49999)
+10
+
+Math.round(10.5)
+11
+
+Math.round(10.9)
+11
+
+Math.round(.5)
+1
+
+Math.round(.499999999)
+0
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>> Imp Intv Qn
+## I want to generate random number in a given specific range
+
+Math.floor(Math.random() * (max-min))+min  //this is formula logic
+
+15-32  //I want generate random number in this given range
+
+Math.floor(Math.random() * (32-15))+15
+24
+
+Math.floor(Math.random() * (32-15))+15
+19
+
+Math.floor(Math.random() * (17))+15  //
+26
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+>>> TensorFlow.js is a library for machine learning in JavaScript.
+
+Math.PI  //It give me value of PI
+3.141592653589793
+
+Math.PI.toFixed(2)   //I want upto 2 decimal.
+"3.14"
+
+Number(Math.PI.toFixed(2))
+3.14
+
+Math.PI.toFixed(3)  //I want upto 3 decimal.
+"3.142"
+
+Math.random().toFixed(4)  //I want upto 4 decimal.
+"0.4975"
+
+Math.floor(Math.PI)   //If I use floor() it gives me pure integer number.
+3
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Math.E
+2.718281828459045
+
+Math.sin(1)
+0.8414709848078965
+
+Math.sin(0)
+0
+
+Math.sin(-1)
+-0.8414709848078965
+
+Math.cos(1)
+0.5403023058681398
+
+Math.cos(-1)
+0.5403023058681398
+
+Math.cos(0)
+1
+
+Math.log(1)
+0
+
+Math.log(0)
+-Infinity
+
+Math.log10(1)  //log base 10 of 1 is 0
+0
+
+Math.log10(10)
+1
+
+Math.pow(2,2)
+4
+
+Math.pow(2,3)  //2 isto power 3
+8
+
+Math.sqrt(4)
+2
+
+Math.sqrt(5)
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### Storage:  ( Browser Storage )
+-------------
+every website saves some temporary data for the usage.
+every website it will save data as temporary storage in browser and use at runtime.
+
+When I login to appln, I will save my user data in my Browser -> Application tab -> Storage -> Session Storage.
+
+3 types storage:
+1. localstorage
+2. Session Storage
+3. Cookies
+
+localstorage:
+---------------
+> is a persistant storage.
+> it saves wrt to browser. even website close it still stays there
+> we have to remove manually. 
+
+localStorage.setItem('tokendata','87678bh8yweg87gfbe8')
+undefined
+
+localStorage.getItem('tokendata')
+"87678bh8yweg87gfbe8"
+
+localStorage.removeItem('tokendata')
+undefined
+
+localStorage.getItem('tokendata') //if you get after removing it will come null.
+null
+
+localStorage.setItem('tokendata','87678bh8yweg87gfbe8')
+undefined
+
+localStorage.removeItem('tokendata')
+undefined
+
+2. Session Storage:
+-------------------
+> is a temorary storage.
+> It removes automatically..As soon as you logout the website I am removing data
+> save wrt to tab. As soon as your tab is closed, it will ideally remove this data automatically.
+
+sessionStorage.setItem('userType','Admin')
+undefined
+
+sessionStorage.getItem('userType')
+"Admin"
+
+sessionStorage.removeItem('userType')
+undefined
+
+sessionStorage.getItem('userType')
+null
+
+sessionStorage.setItem('userType','Admin')
+
+3. Cookies:
+-------------
+> Cookies are saved wrt to Website
+> Cookies has expireIn time
+
+document.cookie
+"_ga=GA1.2.1880173027.1602255983; _gid=GA1.2.507546962.1624346026; _gat_gtag_UA_131256843_1=1"
+
+document.cookie="city=delhi; expires=Thur, 01 July 2021 01:00:00"  //this cookie is avilable till 01 July 2021
+"city=delhi; expires=Thur, 01 July 2021 01:00:00"
+
+document.cookie
+"_ga=GA1.2.1880173027.1602255983; _gid=GA1.2.507546962.1624346026; city=delhi"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## var, let and const:
+-----------------------
+var > we can redeclare and reassign  ( same variable we can use again and change value )
+let > we cannot redeclare but can reassign  ( where you want to change value use "let" )
+const > we cannot redeclare nor reassign    ( where you dont want to change value use "const" )
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var a = 10;
+	var a > declare  //first step is declaration
+	a = 10 > assignment  //second step assignment
+
+Node version above 10 - v14.15.5
+
+> var a = 10   //here a becomes 10
+> a
+10
+
+> var a = 11  //here a becomes 11
+> a
+11
+
+> a = 12   //here a becomes 12
+12
+> a
+12
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
+> let b = 20
+undefined
+> b
+20
+
+> let b = 21
+Uncaught SyntaxError: Identifier 'b' has already been declared
+
+> b = 21
+21
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+> const c = 10
+undefined
+> c
+10
+
+> const c = 11
+Uncaught SyntaxError: Identifier 'c' has already been declared
+
+> c = 11
+Uncaught TypeError: Assignment to constant variable.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
