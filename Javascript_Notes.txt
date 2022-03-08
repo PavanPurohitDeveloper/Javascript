@@ -574,7 +574,7 @@ var a = 2
 !a
 false
 //Logic behind is: Basically in the JavaScript there are 2 kind of values - "truthy" and "falsy" values.
-  truthy > any number except 0 weather +ve or -ve , string , true -- All are truthy value... Opposite of them is always false.
+  truthy > any number except 0 weather +ve or -ve , string , true -- All are truthy value...Opposite of them is always false.
   falsy > 0 , false, null ,undefined   -- All are the falsy values.
 
 var b = "hi"
@@ -1307,16 +1307,469 @@ Uncaught SyntaxError: Identifier 'c' has already been declared
 Uncaught TypeError: Assignment to constant variable.
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### github:
+-------------
+
+https://git-scm.com/downloads
+
+>>>>First Time from New folder<<<<<<<<<       
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Aakashdeveloper/testgit.git
+git push -u origin master
+
+////////////////////////////////
+git status 
+
+git add filename    
+git commit -m "comment"
+git push 
+
+git pull 
+
+git branch 
+
+//New branch
+git checkout -b branchname
+
+//switch branch
+git checkout branchname
+
+//push to branch     
+git push -u origin branchname
+
+>> git fetch origin feature/test
+
+>>> first time
+git clone https://github.com/Aakashdeveloper/testgit
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## if else:
+------------
+if(condition){  //If condition is true/match
+    //do something
+} else{   //If condition is false
+    // do something
+}
+
+var a = 8772
+undefined
+
+a%2==0  //division by 2..output of condition is always boolean
+true
+
+a%3==0  //division by 3..output of condition is always boolean
+true
+
+a%5==0  //division by 5..output of condition is always boolean
+false
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+var a = 54652
+if(a%2==0){
+    console.log(`Number ${a} is even`)
+}else{
+    console.log(`Number ${a} is odd`)
+}
+Number 54652 is even
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+var a = 5465
+if(a%2==0){
+    console.log(`Number ${a} is even`)
+}else{
+    console.log(`Number ${a} is odd`)
+}
+Number 5465 is odd
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var name = "Priya";
+if(name=="Priyanka"){  //If condition matches, it will go inside and stop
+    console.log(`Hi ${name} you are admin`)
+}else if(name=="Bhumika"){
+    console.log(`Hi ${name} you are super admin`)
+}else if(name=="Priya"){
+    console.log(`Hi ${name} you are user`)
+}else{  //If condition not matches
+    console.log(`Hi ${name} you are unknown`)
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var name = "John"
+var role = "User"
+
+if(role == "Admin"){
+    if(name == "Aakash") {
+        console.log(`Hi ${name} your role is ${role}`)
+    } else{
+        console.log(`Hi ${name} your role is unknown`)
+    }
+} else if(role == "User") {
+    if(name == "John") {
+        console.log(`Hi ${name} your role is ${role}`)
+    } else {
+        console.log(`Hi ${name} your role is unknown`)
+    }
+} else {
+    console.log(`Invalid Input`)
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// any condition can match - OR condition
+var name = "Tina"
+if(name == "Tina" || role=="Admin"){
+    console.log(`Hi ${name} your role is ${role}`)
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// both match  -- AND condiiton
+if(name == "Tina" && role=="Admin"){
+    console.log(`Hi ${name} your role is ${role}`)
+}
+
+var name = "Tina"       //out of this any one
+if(name == "Tina" && (role=="Admin" || role=="User")){
+    console.log(`Hi ${name} your role is ${role}`)
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+truthy > any number except 0 weather +ve or -ve , or any string , or true -- All are truthy value...Opposite of them is always false.
+falsy > 0 , false, null ,undefined   -- All are the falsy values.
+
+var a = 1;   
+if(a) {
+    console.log("hii")
+} else {
+    console.log("bie")
+}
+hii    //1 is true first part runs.. its truthy value
+
+var a = 0;
+if(a) {
+    console.log("hii")
+} else {
+    console.log("bie")
+}
+bie  //0 is true second part runs.. its falsy value
+
+var a = -1;   //this is also truthy value.. -1 is true first part runs..
+if(a) {
+    console.log("hii")
+} else {
+    console.log("bie")
+}
+hii
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Ternary opeartor > basically Single line  if else
+
+//////////////////
+condition ? if true : if false
+If condition true - then first part works Else second part works.
+
+var a = 10;
+a>10 ? "hii" : "bie"
+"bie"   //here condition is false so second part works
+
+var a = 10;
+a==10 ? "hii" : "bie"
+"hii"  //here condition is true so first part works
+
+var a = 10;
+a>10 ? a+1 : a-1
+9     //here condition is false
+
+var a = 10;
+a==10 ? a+1 : a-1
+11   //here condition is true
+
+// wrong code -- we never do nested ternary ////
+var a = 10;
+a==10 ? a+1 : a-1 ? "Hii" : "Bie"
+11
+
+var a = 10;
+a>10 ? a+1 : a-1 ? "Hii" : "Bie"
+"Hii"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Date: By default JS gives the date ( current date and time )
+
+Date()
+"Fri Jul 02 2021 08:42:51 GMT+0530 (India Standard Time)"
+
+var a = new Date()
+undefined
+
+a.getDate()
+2
+
+a.getMonth()
+6
+
+a.getFullYear()
+2021
+
+a.getDay()
+5
+
+> month start with 0 as Jan and 11 as dec 
+> day start with 0 as sunday and 1 as monday, 2 as Tuesday, 3 as Wednesday, 4 as Thursday, 5 as Friday, 6 as Saturday
+
+assignment## print - in single line name of the month
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## switch:
+-----------
+if we have multiple condition and multiple output ( better to go with if else )
+one condition and one output ( go with ternary )
+one condition and multiple output ( go with switch )
+
+switch(condition){
+    case output1:
+        response
+    case output2:
+        response
+    default:
+        response
+}
+
+var name = 'Eva'
+switch(name){  //here condition is one only i.e. name
+    case 'Aakash':  //if output of that is 'Aakash' then
+        console.log(`Hi ${name}`);
+        break;  //if you dont put break every case will run.
+    case 'Eva':
+        console.log(`Hi ${name}`);
+        break;
+    default:
+        console.log(`Hi Unknown`)
+}
+Hi Aakash
+
+//I want to find a number is Odd or Even ?
+var input = 2;
+switch (input%2){  //condition is One
+    case 0:  //If output is 0 then
+        console.log(`Number ${input} is even`);
+        break;
+    case 1:   //If output of this case is 1 then
+        console.log(`Number ${input} is odd`);
+        break;
+    default:  //Else default
+        console.log(`Default Case`);
+}
 
 
+switch(new Date().getDay()){  //condition
+    case 0:  //If output of this condition is 0 then
+        console.log(`Today is sunday`)
+        break;
+    case 1:
+        console.log(`Today is monday`)
+        break;
+    default:
+        console.log(`Wrong Input`)
+}
+Today is monday
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Array:
+-----------
+> Array is a collection of homogeneous datatype as well as heterogeneous..
+		     homogeneous means collection of one kind of data
+> Array is represented by [ ] square bracket
 
+var a = [1,4,5,554,43,797,0,044] (array of number)
+var b = ['sdbg','dsgdf','r3r3','ebfe3'] (array of string)
+var c = [true,false,false,true] (array of boolean)
 
+//heterogeneous array  -- contains some number, some string, some boolean...any order
+//heterogeneous array - combination of number, string, boolean..
+var d = [1,2,true,'cd',false,false,34,634,"esdgd","db",2]
 
+var city = ["Delhi","Venice","Amsterdam","London"]
+typeof(city)  //type of the array is Object
+"object";
 
+var a = NaN
+type(a)  //type of NaN is number
+"number"
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//Index number starts from 0..
 
+var city = ["Delhi","Venice","Amsterdam","London"]
+undefined
 
+city[1]
+"Venice"
+
+city[0]
+"Delhi"
+
+city.length   //length of array
+4
+
+city[city.length-1]   //if you wnat last value
+"London"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+push> add the value in the end of the array
+unshift> always remove first value of the array. add the value in begining of the array.
+//push and  unshift are opposite
+
+pop > remove always last value of the array. It also affects the original array.
+shift> remove first value of the array.
+//pop and  shift are opposite
+
+## push:
+---------
+var city = ["Delhi","Venice","Amsterdam","London"]
+undefined
+city.push('Mumbai')
+5
+city
+(5) ["Delhi", "Venice", "Amsterdam", "London", "Mumbai"] 0: "Delhi" 1: "Venice" 2: "Amsterdam" 3: "London"4: "Mumbai" 5: "Dubai"length: 6__proto__: Array(0)
+
+city.push('Dubai')
+6
+city
+(6) ["Delhi", "Venice", "Amsterdam", "London", "Mumbai", "Dubai"]
+
+## pop:   
+---------
+//always remove last value of the array. whether you give index number or dont give index number parameter does not matter
+
+city.pop()
+city
+(5) ["Delhi", "Venice", "Amsterdam", "London", "Mumbai"]
+
+city.pop(2)    //
+"Mumbai"
+(4) ["Delhi", "Venice", "Amsterdam", "London"]
+
+city.pop(100)
+"London"
+city
+(3) ["Delhi", "Venice", "Amsterdam"]
+
+## unshift:    //opposite to push...add the value in begining of the array.
+-----------
+var city = ["Delhi", "Venice", "Amsterdam", "London", "Mumbai", "Dubai"]
+city.unshift('Nice')
+7
+city
+(7) ["Nice", "Delhi", "Venice", "Amsterdam", "London", "Mumbai", "Dubai"]
+city.shift()
+"Nice"
+
+## shift:    //opposite to pop
+-----------
+(7) ["Nice", "Delhi", "Venice", "Amsterdam", "London", "Mumbai", "Dubai"]
+city.shift()
+"Nice"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## slice():  It remove the first value of the array.. the main array does not affected.
+-----------
+var city = ["Nice", "Delhi", "Venice", "Amsterdam", "London", "Mumbai", "Dubai"]
+undefined
+
+city.slice(1)
+(6) ["Delhi", "Venice", "Amsterdam", "London", "Mumbai", "Dubai"]
+
+city.slice(2)
+(5) ["Venice", "Amsterdam", "London", "Mumbai", "Dubai"]
+city
+(7) ["Nice", "Delhi", "Venice", "Amsterdam", "London", "Mumbai", "Dubai"]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## splice():
+-------------
+> It take 3 values - splice(startIndex, DeleteCount, values):
+> Original array gets affected.
+
+var city = ["Nice", "Delhi", "Venice", "Amsterdam", "London", "Mumbai", "Dubai"]
+city.splice(startIndex, DeleteCount, values)   //DeleteCount - how many values you want to remove 
+
+// on index 2 delete 2 values
+city.splice(2,2)
+(2) ["Venice", "Amsterdam"]
+
+city
+(5) ["Nice", "Delhi", "London", "Mumbai", "Dubai"]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// on index 1 dont delete value but add 2 values
+city.splice(2,0,'Paris','Boston')
+
+city
+(7) ["Nice", "Delhi", "Paris", "Boston", "London", "Mumbai", "Dubai"]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// on index 3 delete one value and add 1 value;
+city.splice(3,1,'Edinberg')
+(7) ["Nice", "Delhi", "Paris", "Boston", "London", "Mumbai", "Dubai"]
+
+city.splice(3,1,'Edinberg')
+["Boston"]
+
+city
+(7) ["Nice", "Delhi", "Paris", "Edinberg", "London", "Mumbai", "Dubai"]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+var a =['a',2,'c',1]
+var b = [2,'d',4]
+
+a+b
+"a,2,c,12,d,4"   //first value of second array they place together
+
+a-b
+NaN
+
+//using concat() it will work..
+a.concat(b) 
+["a", 2, "c", 1, 2, "d", 4]
+
+var c = [4,'e',4,7]
+a.concat(b,c)
+(11) ["a", 2, "c", 1, 2, "d", 4, 4, "e", 4, 7]
+
+c.concat(a,b)
+(11) [4, "e", 4, 7, "a", 2, "c", 1, 2, "d", 4]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## indexOf():
+-------------
+> If the value is part of the array you will get index number either 0 or >0
+> If that value is not part of the array, you will get always -1
+
+var city = ["Nice", "Delhi", "Paris", "Edinberg", "London", "Mumbai", "Dubai"]
+undefined
+
+city.indexOf('Delhi')
+1
+
+city.indexOf('Hongkong')
+-1
+
+city.indexOf('Pune')
+-1
+
+city.indexOf('London')
+4
+
+city.indexOf('Nice')
+0
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 
