@@ -2946,13 +2946,65 @@ dbQuery.insert('employee',{name:'John',city:'Delhi'} )
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ### export import:
 -------------------
+sending a data from one file to another file..
+
+==> first.js
 //Es5
 module.exports = dbObj
 
 //Es6
 export default dbObj;
 
+==> second.js
+//Es5
+//let myObj = require('./first');
 
+//es6
+import myObj from './first';
+
+to run code:
+> node first.js
+> node second.js
+
+To run ES6 code, NodeJS version must be latest version.. If we have older version then use babel..
+babel - is a open source transpilier compiler. help to transpilier the files into older version..backward compatibility..
+it is one of the npm package.. NPM is a library we have so many packages are there..
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+### package.json:
+------------------
+> It contains all meta data..
+> contains name, version, description
+> what packages you are using.
+> scripts to start/build/test..
+
+//////////////
+step to generate package.json
+//////////////
+> NodeJS must be installed.
+> npm init -y
+
+We need to install the packages..we need 3 packages
+> npm i @babel/core
+> npm i @babel/register
+> npm i @babel/preset-env
+
+> npm i @babel/core @babel/register @babel/preset-env
+
+It will download all the packages inside "node_modules" folder..Its a very high folder...
+we never push the node_modules folder to the GIT..
+
+.babelrc file --> In this file we set the environment..backward compatability..this helps me to setting the environment..
+	{
+		"presets": [
+			"@babel/preset-env"
+		]
+	}
+	
+# How you will run app
+> C:\MyWorkspace\visual-studio-code-workspace\Javascript\1importexport>node start.js
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 

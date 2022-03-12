@@ -1,0 +1,6 @@
+//this file helps to set the environment
+{
+    "presets": [
+        "@babel/preset-env"
+    ]
+}

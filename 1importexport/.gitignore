@@ -1,0 +1,2 @@
+# dont push the node_modules folder to git.
+node_modules
