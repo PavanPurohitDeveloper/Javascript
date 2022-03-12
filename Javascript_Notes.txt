@@ -2942,8 +2942,17 @@ dbQuery.find('students')
 dbQuery.insert('employee',{name:'John',city:'Delhi'} )
 "insert into employee name, city values(John,Delhi)"  //output
 
-
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### export import:
+-------------------
+//Es5
+module.exports = dbObj
+
+//Es6
+export default dbObj;
+
+
 
 
 
