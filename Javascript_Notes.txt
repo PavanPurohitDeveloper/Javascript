@@ -1770,9 +1770,1180 @@ city.indexOf('Nice')
 0
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### I want to check given value is array or not
+var a = "hii"
+var b = ["Hii"]
+
+Array.isArray(a)
+false
+
+Array.isArray(b)
+true
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//we can sort the array..
+var city = ["Nice", "Delhi", "Paris", "Edinberg", "London", "Mumbai", "Dubai"]
+city.sort()
+(7) ["Delhi", "Dubai", "Edinberg", "London", "Mumbai", "Nice", "Paris"]
+
+//we can reverse the array..
+city.reverse()
+(7) ["Paris", "Nice", "Mumbai", "London", "Edinberg", "Dubai", "Delhi"]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>> Imp Intv Qn:
+Lets say we have random array
+
+var random = ["Nice", 5, "delhi", false, "Paris", "edinberg", 2, 1, true, "London", "mumbai", 'zurich', "Dubai"]
+
+//sort this array.. It sorted the array for me..how it sorted ?
+random.sort()
+[1, 2, 5, "Dubai", "London", "Nice", "Paris", "delhi", "edinberg", false, "mumbai", true, "zurich"]
+
+It sorted the array in the form of..
+[number, capital letter, small letter which includes boolean as well]
+boolean also counted as small letter..
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//Lets we have nested array..array inside the array..
+var city = ["Nice", "Delhi", ['Red','Yellow','Green'], "London", ['Bmw','Audi','Merc',['React','Node','JavaScript'],'Skoda'], "Dubai"]
+
+//If I want to print here Delhi
+city[1]
+"Delhi"
+
+city[2]  // is the array
+(3) ["Red", "Yellow", "Green"]
+
+city[2][0]
+"Red"
+
+city[3]
+"London"
+
+city[4][2]
+"Merc"
+
+city[4][3]
+(3) ["React", "Node", "JavaScript"]
+
+city[4][3][0] //number of array means number of square brackets.
+"React"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var city = ["Nice", "Delhi", ['Red','Yellow','Green'], "London", ['Bmw','Audi','Merc',['React','Node','JavaScript'],'Skoda'], "Dubai"]
+
+//it removes the one level of nesting array..
+city.flat()
+["Nice", "Delhi", "Red", "Yellow", "Green", "London", "Bmw", "Audi", "Merc", Array(3), "Skoda", "Dubai"]
+
+//removes the two level of nesting..we will have pure straight array..
+city.flat(2)
+["Nice", "Delhi", "Red", "Yellow", "Green", "London", "Bmw", "Audi", "Merc", "React", "Node", "JavaScript", "Skoda", "Dubai"]
+
+//first flat and then sort it..
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### Loops:
+----------
+for
+for of
+for in(object)
+Map   //requires function
+filter  //requires function
+while    //no one will use
+do while  //no one will use
+
+////////////////////////////////////////////////////////////////
+for loop > help to generate series of value or help to iterate over array
+////////////////////////////////////////////////////////////////
+
+for(startIndex,condition,increment) { }
+
+for(i=0; i<5; i++) {
+    console.log(i)
+}
+0
+1
+2
+3
+4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var city = ["Nice", "Delhi", "Paris", "Edinberg", "London", "Mumbai", "Dubai"]
+for (i=0; i<city.length; i++) {
+    console.log(city[i])
+}
+Nice
+Delhi
+Paris
+Edinberg
+London
+Mumbai
+Dubai
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var city = ["Nice", "Delhi", ['Red','Yellow','Green'], "London", "Dubai"]
+for(i=0;i<city.length;i++) {
+    if(Array.isArray(city[i])) {
+        for(j=0;j<city[i].length;j++) {
+            console.log(city[i][j])
+        }
+    } else {
+        console.log(city[i])
+    }
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+////////////////////////////////////
+while
+///////////////////////////////////
+first we check the condition and then print and increment
+
+var i = 10;
+while(i<5) {
+    console.log(i)
+    i++
+}
+
+////////////////////////////////////
+Do while
+///////////////////////////////
+first you print and then check the condition..
+if you dont want to print atleast once..
+
+var i = 10;
+do {
+    console.log(i)
+    i++
+}
+while(i<5)
+
+////////////////////////////////////
+for of
+///////////////////////////////////
+
+var city = ["Nice", "Delhi", "Paris", "Edinberg", "London", "Mumbai", "Dubai"]
+
+//to print all the values of array
+for(mycity of city) {
+    console.log(mycity)
+}
+
+var city = ["Nice", "Delhi", ['Red','Yellow','Green'], "London", "Dubai"]
+for(mycity of city){
+    
+    if(Array.isArray(mycity)) { //if this is the array.. go inside then run loop
+        for(color of mycity) {
+            console.log(color)
+        }
+    } else {
+        console.log(mycity)
+    }   
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### categories of functions:
+------------------------------
+function
+method
+arrow function
+iffi   //immediately invokable function
+generator
+//////////////////
+
+function:
+----------
+var a = 10;
+var b = 20;
+a+b
+30
+
+> function is the keyword. 
+> we can give any name to the function
+> we give parameters to the function
+> function will return
+
+function add(a,b) {
+    return a+b
+}
+
+//call the function
+add(1,2)
+3
+
+add(10,20)
+30
+
+add('a','b')
+"ab"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//write a function to find given number is even or odd
+
+function isEven(userInput){
+    var out;
+    if(userInput%2==0){
+        out = `Number ${userInput} is even`
+    }else{
+        out = `Number ${userInput} is odd`
+    }
+    return out
+}
+
+isEven(5)
+"Number 5 is odd"
+
+isEven(50)
+"Number 50 is even"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+function test(a,b){
+    return a,b
+}
+
+//you cannot return more than one value from the function.. whatever is the last written parameter that will be return.
+//By deafult function do not return the two output at one go.
+test(1,2)   
+2    // here it will return b
+
+function test(a,b){
+    return b,a 
+}
+
+test(1,2)  // here it will return a
+1
 
 
+function test(a,b){
+    var out = [a,b] //if u want to still return, then put them into array and then return..
+    return out
+}
+test(1,2)
+(2) [1, 2]
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+I am not sure how many parameters user is going to send.. here comes by Es6 >>> Rest
+
+//Es6 >>> Rest operator
+// with rest we can take any number of parameters
+// it return all parameters in from of array
+
+function add(...args) {  //always 3 dots..
+    console.log(args)
+}
+
+add(1,2,3,4,5,6)
+[1, 2, 3, 4, 5, 6]   //it will return .. you get array of 6 numbers
+
+add(1,2)
+[1, 2]   //it will return .. you get array of 2 numbers
+
+
+//whatever parameter user will pass, we receieve the array of that values.
+add('hii','bie','Hey')
+["hii", "bie", "Hey"]   
+
+
+function add(...args){
+    var sum = 0;
+    for(data of args) {
+        //sum = data+sum
+        sum += data
+    }
+    return sum
+}
+
+add(1,2)
+3
+
+add(1,2.5,4,6,9)
+22.5
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//////////
+method > when function assign to variable it becomes a method.
+/////////
+function add(a,b) {
+    return a+b
+}
+add(1,2)
+3
+
+-------Method--------
+var add = function(a,b) {
+    return a+b
+}
+
+add(1,2)
+3
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+////////////////
+Arrow Functions (es6)
+////////////////
+
+var add = (a,b) => {
+    return a+b
+}
+add(1,2)
+
+//function inside a function..
+function returnFunctionData() {
+    var userName = "John"
+
+    function add(a,b){
+        console.log(a+b)
+    }
+    function sub(a,b){
+        console.log(a-b)
+    }
+    function multiply(a,b){
+        console.log(a*b)
+    }
+
+	//finally we will return it.
+    return {
+        // add: add   //If both the side of the colon have same value it will work. this we call Destructue.
+    Or  add,
+        sub: sub,
+        multiply: multiply,
+        userName
+    }
+}
+
+var mytest = returnFunctionData()
+undefined
+
+mytest.userName
+"John"
+
+mytest.add(1,2)
+3
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Destructue:  The concept of Destructuring says, that dont have to write both the value on both the side.
+---------------
+var [a,b] = [1,2]
+a
+1
+b
+2
+
+var add = (a,b) => { return a+b} 
+add(1,2)
+
+add
+add:add
+
+const x = [1,2,3,4,5]
+const [y,z] = x
+y == 1
+z == 2
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### IFFI:
+---------
+To run as .js whole file, nodejs must be installed..
+> open the command prompt -> go inside the folder -> node 18function2.js   ( node <file_name>  )
+> Open the terminal from Visual studio code --> node 18function2.js
+
+/*function sayHi(){
+    console.log("hiiii")
+}
+sayHi()*///////////  here explicitly we call the function..
+
+// IFFI or callback function ... Immediately invokable function...something popup should run automatically..
+//this function has no name.. it automatically get called.. we called call back functions.
+( function() {
+    console.log("hiiii") 
+}())
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Spread:
+------------
+function add(a,b,c,d){
+    console.log("a>>>",a)
+    console.log("b>>>",b)
+    return a+b+c+d
+}
+
+var num = [1,2,3,4]
+
+add(num)   //num will treat as one parameter..
+"1,2,3,4undefinedundefinedundefined"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+function add(a,b,c,d){
+    console.log("a>>>",a)
+    console.log("b>>>",b)
+    return a+b+c+d
+}
+
+var num = [1,2,3,4]
+
+add(num)
+a>>> (4) [1, 2, 3, 4]
+
+b>>> undefined
+"1,2,3,4undefinedundefinedundefined"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+function add(a,b,c,d){
+    console.log("a>>>",a)
+    console.log("b>>>",b)
+    return a+b+c+d
+}
+
+var num = [1,2,3,4]
+add(...num)     //here it passes the value one by one parameter
+
+///// if we use ... for passing parameter than we call it as spread operator
+				we calling the function and passing the parameter then its spread.
+				
+	  Ex: add(...spread)
+	  
+// if we use ... for defining the function that rest..
+	Ex:
+	function add(...rest){
+
+	}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// here ...args act like rest
+function add(...args) {
+    var sum = 0;
+    for(data of args){
+        sum += data
+    }
+    return sum
+}
+
+var num = [1,2,3,4]
+/// ...num act like spread
+add(...num)
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var b = [1,2,3,4]
+var a = ['a','b','c','d']   //I want to put above array inside this array..
+
+var a = ['a','b',...b,'c','d']
+a
+["a", "b", 1, 2, 3, 4, "c", "d"]
+
+//If you want to update the original array and + you want to add more values into that..
+var out1 = [1,2,3]
+var out2 = [...out1,4,5,6]
+
+out2
+(6) [1, 2, 3, 4, 5, 6]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+/////generator////
+function loop(userInput) {
+    for(i=0; i<userInput; i++){
+        console.log(i)
+    }
+}
+
+loop(5)  //it has printed all values in one go.. 0,1, 2, 3, 4, 5
+0
+1
+2
+3
+4
+
+But in some cases you want to control the behvaior of it..to control the flow of the function/application..
+
+//put * and put yeid
+function * loop(userInput){
+    for(i=0;i<userInput;i++){
+        yield i
+    }
+}
+
+loop(5)   //Initially if you call this function you will not get any output of it..
+loop {<suspended>}
+
+var data = loop(5)  //assign a data to variable.. and call next() method..
+
+data.next()
+{value: 0, done: false}
+
+data.next()
+{value: 1, done: false}
+
+data.next()
+{value: 2, done: false}
+
+data.next()
+{value: 3, done: false}
+
+data.next()
+{value: 4, done: false}
+
+data.next()  //in the end value will become undefined and done becomes true..
+{value: undefined, done: true}
+
+It is used, when you have button.. when you click on button you want next value.. again click on button you want next value..
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### Map: is kind of loop
+---------
+var a = [4,5,16,2,3,17,5,9,11,17,8,6,14,4,18,8]
+
+a.map( () ==> {} )  //Inside map you write a function.. Its like call back function.. map is itself a function..
+we calling one function inside the other function..This function does not have name inside it..
+when the map() will run, this inside function () ==> {}  will be invoked automatically..
+
+call back function -- mean we calling one function inside the other function
+
+a.map((data) => { console.log(data)})  //just printing the data as its array..
+
+//I want each number multiply by 2..
+a.map( (data) => { return data*2} )     //It will give me the array of same length each number multiply by 2..
+[8, 10, 32, 4, 6, 34, 10, 18, 22, 34, 16, 12, 28, 8, 36, 16]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//If I want each one of them in <p> tag.
+
+a.map( (data) => { return `<p>${data*2}</p>`} )
+
+["<p>8</p>", "<p>10</p>", "<p>32</p>", "<p>4</p>", "<p>6</p>", "<p>34</p>", "<p>10</p>", "<p>18</p>", "<p>22</p>", "<p>34</p>", "<p>16</p>", "<p>12</p>", "<p>28</p>", "<p>8</p>", "<p>36</p>", "<p>16</p>"]
+
+> map & filter is use to iterate over the array .. only it works with array.
+> it always return same length of output as input array
+> it is use to apply logics(sum, multiply, divison) or return html..
+
+In the React every where we use map..
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### filter(): 
+--------------
+filter helps to filter the data..
+
+var a = [4,5,16,2,3,17,5,9,11,17,8,6,14,4,18,8]
+
+//I want all those numbers greater than 10..
+a.filter( (data) => {return data>10} )
+[16, 17, 11, 17, 14, 18]
+
+> filter is use to filter out the value
+> it may or may not return same length of output2
+> it only return those value for which condition/output is true.. filter will give the value on the basis of output..
+  it return only those values if the condition is true..
+
+//If we use map() here.. It return the same length of the array..map return the output..
+var a = [4,5,16,2,3,17,5,9,11,17,8,6,14,4,18,8]
+a.map((data) => {return data>10})
+[false, false, true, false, false, true, false, false, true, true, false, false, true, false, true, false]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>Important Intv Qn:
+var a = [0,1,2,3]
+a.map( (data)=> { return data*2})
+[0,2,4,6]
+
+a.filter((data)=> { return data*2})
+[1, 2, 3]  //output of this condition is [1,2,3]
+
+//logic..it only return those value for which condition/output is true.. 
+>0*2 =0 false
+>1*2 =2 true
+>2*2 =4 true
+>2*3 =6 true
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+RegExp
+### regularExpression:
+-----------------------
+^$  //use for validation purpose we use regularExpression.
+
+// if pattern does not match it will return null
+//If you get output as array then its pattern matched.
+
+//I want to check whether given value is String or not..
+var a = "hi"
+a.match("^[a-z]$")  //expecting value should be a to z.. checking a to z only with the single letter..
+null  //returns null..
+
+var a = "hi"
+// expect 2 small letter word only
+a.match("^[a-z]{2}$")
+["hi", index: 0, input: "hi", groups: undefined]   //here pattern matched..
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var a = "Hi"
+a.match("^[a-z]{2}$")
+null
+
+// exact 2 letter..either small letter or uppercase letter it matches..
+var a = "Hi"
+a.match("^[A-Za-z]{2}$")
+null
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// letter between 2 to 5..it expects a letter minimum 2 and maximum 5..
+var a = "Hi"
+a.match("^[A-Za-z]{2,5}$")
+
+// any number of letter ..either capital or small letter or any length it will work..
+var a = "Hi"
+a.match("^[A-Za-z]+$")
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+var a = "Hi"
+a.match("^[K-Za-z]+$")
+null
+
+var a = "Kiiiiiiiiii"
+a.match("^[H-Za-z]+$")
+["Kiiiiiiiiii", index: 0, input: "Kiiiiiiiiii", groups: undefined]
+
+var a = "Kiiiiiiiiii"
+a.match("^[H-Za-z$@&]+$")  //any special character it will work..
+
++ mean any length..
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+///phone number.. 
+var a = 8782656782
+a.match("^[0-9]{10}$")   //this will not work..
+a.match is not a function
+
+/// regex is only work on strings
+
+//if you want to work this..
+var a = 8782656782
+a.toString().match("^[0-9]{10}$")
+["8782656782", index: 0, input: "8782656782", groups: undefined]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+dot . --> means anything/everything in terms of regex.. escape character
+
+var test = "hob hom tom hnm"
+var pattern = /h.m/g   //I want all the word that start with h and with m..in between any word does not matter..
+test.match(/h.m/g)   --> /g  == means global
+["hom", "hnm"]     //output
+
+test.match(/h.m/g)
+(2) ["hom", "hnm"]
+
+test.match(/h./g)    //gives all those words starts with h and in between anything
+(3) ["ho", "ho", "hn"]
+
+test.match(/.m/g)     //give all those words end with m..
+(3) ["om", "om", "nm"]
+
+var test = "h.b hom tom h.m"   //if you looking word that have a dot (.) characters in between..
+test.match(/h\.m/g)     //you have to escape for dot..
+["h.m"]
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var email = "a@a.com" 
+email.match("^([a-zA-Z0-9]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})$")   
+["a@a.com", "a", "a", "com", index: 0, input: "a@a.com", groups: undefined]
+
+var email = "@a.com"
+email.match("^([a-zA-Z0-9]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})$")  //this will not work..
+null
+
+var email = "aa.com"
+email.match("^([a-zA-Z0-9]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})$")   //this will not work..
+null
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### closure:
+-------------
+closure means  scoping -- close means enclosing something.. its going to enclose something for us..
+its more about scoping..
+
+1. local scope
+2. global scope
+
+//enclose something
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>1   
+
+var a = 10;
+function add(){
+    var b = 20;
+    return a+b
+}
+
+console.log("a>>>>",a)  //a we can print..
+
+console.log("b>>>>",b)   //it prints undefined..variable b act like a closure.. scope of variable b is just inside curly bracket inside function.. here we cannot use variable b outside..
+
+console.log("sum>>>>",add())
+
+curly bracket makes a closure for us..
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>2
+
+var a = 10;
+for(i=0; i<5; i++) {   //function by default makes a closure..
+    let b = 20;
+    console.log(a+b+i)
+}
+
+console.log("a>>>>",a)  //a and b both got printed.. which is not correct..problem here is the var keyword..
+console.log("b>>>>",b)
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>3
+
+let a = 10;   //global scope
+function add() {
+    a = 30;  //a will override here..   //local scope
+    var b = 20;   //b cannot access outside..
+    return a+b
+}
+
+console.log("a>>>>",a)  //10
+
+console.log("sum>>>>",add())   //30  //right now it is in the global scope.. it is defined outside the function..its overriding.
+
+console.log("a>>>>",a)   //10
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+4>
+
+var employeeId = 'abc123';
+function foo() {
+	employeeId = '123bcd';  //here it will override..
+	return;
+}
+
+foo();  //call this function..
+console.log(employeeId);
+
+Answer: 2) '123bcd'  //because it will get override..
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+5>  Intv Qn
+
+var employeeId = 'abc123';
+function foo() {
+    employeeId = '123bcd';  //here overriding
+	return;
+
+	function abc() {}  //after retun again called one function
+}
+
+foo();
+console.log(employeeId);
+
+Answer: 3) '"123bcd"'
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+6>  Intv Qn
+
+var employeeId = 'abc123';
+function foo() {
+    employeeId = '123bcd';  //here overriding
+	
+	function abc() {}; //even if your function is inside that value will get override.
+	return;  
+}
+
+foo();
+console.log(employeeId);
+
+Answer: 3) '"123bcd"'
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+7>
+
+var employeeId = 'abc123';
+function foo() {
+	employeeId();
+	return;
+
+	function employeeId() {
+		console.log(typeof employeeId);  //it printed type of employeeId as function.
+	}
+}
+
+foo();
+Answer: 2) 'function'  
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+7>  same above function..
+
+var employeeId = 'abc123';  
+function foo() {
+	employeeId = 'bcd123';
+	return;
+
+	function employeeId() {
+		console.log(typeof employeeId);  //it printed type of employeeId as function.
+	}
+}
+
+//when you define something global you can override local but you should not have same name of function inside it..
+
+foo();
+undefined
+employeeId
+Answer: 2) 'abc123'   //here value does not get overrided..because variable name and function name is same it will not override..
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+7>
+var employeeId = 'abc123';
+function foo() {
+    abc();
+    return;
+	function abc() {
+		console.log(typeof employeeId);
+	}
+}
+
+"string"  //returns string because its accessing from the global scope...
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+8>
+
+var employeeId = 'abc123';
+function foo() {
+    employeeId = 10   //if its not find in the local scope it will go in the global scope.. global scope also will give undefined..
+	
+    abc();  //calling the function..
+    return;
+	//defining the function..
+	function abc() {
+		console.log(typeof employeeId);
+	}
+}
+
+number   //returns number...
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+function multiply(a,b,c) {
+    return a*b*c
+}
+
+multiply(2,3,4)
+24
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//Lets say if you have to pass the parameter individually one after the other..this is called curring function..function inside function..function return the function is called curring function..
+
+function multiply(a) {
+
+    return function(b) {
+        return function(c) {
+            return a*b*c
+        }
+    }
+}
+
+multiply(2)(3)(4)  
+24
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+### hoisting:
+----------------
+a = 10;
+var b = 20;
+console.log(add(a,b))   //what error will come here ? 
+
+function add(a,b) {
+    return a+b
+}
+
+var a;
+30;   //ouput is 30..   function is called even before declaraing it..we dont get any error..
+
+JavaScript will read the code in the form of first it declarae all variables and then it start assigning..JS will compile the code in this way..
+
+//////////////
+
+var a;
+var b;
+
+function add(a,b){
+    return a+b
+}
+
+a =10;
+b=20;
+console.log(add(a,b))
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## Objects:
+------------
+var movies = "Avengers"
+var movieRating = 4.5
+var movieLang = "English"
+
+var movies2 = "Jab We Met",
+var movieRating2 = 4.8
+var movieLang2 = "Hindi"
+
+//to manager the particular set of data we go with Objects..
+//objects are defined with curly brackets { }
+//Arrays are defined with square brackets [ ]
+//you can access the property with dot notation.
+
+var movie = {
+    name:'Avengers',
+    rating:4.5,
+    lang:'English'
+}
+typeof(movie)
+"object"
+
+//accessing the property
+movie.name
+"Avengers"
+
+movie.rating
+4.5
+
+movie.lang
+"English"
+
+//we can update the property
+movie.rating = 4.8
+4.8
+
+movie
+{name: "Avengers", rating: 4.8, lang: "English"}
+
+//we can add the propertry..
+movie.industry = "Hollywood"
+"Hollywood"
+
+movie
+{name: "Avengers", rating: 4.8, lang: "English", industry: "Hollywood"}
+
+//we can delete the property..
+delete movie.lang
+true
+
+movie
+{name: "Avengers", rating: 4.8, industry: "Hollywood"}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// In the seal() You can only update the property..It sealed the object..you cannot add the property..
+Object.seal(movie)
+{name: "Avengers", rating: 4.8, industry: "Hollywood"} industry: "Hollywood"name: "Avengers" rating: 4.8__proto__: Object
+
+movie.lang = "English"
+"English"
+
+//it is not added the new property..
+movie
+{name: "Avengers", rating: 4.8, industry: "Hollywood"}
+
+//you can update the property..it is possible.
+movie.rating = 4.9
+4.9
+
+movie
+{name: "Avengers", rating: 4.9, industry: "Hollywood"}
+
+delete movie.name
+false
+
+//Neither you can delete/add the propert..but You can only update the property..
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//with freeze() you can stop the update part also ..
+
+//You can only update/add/remove the property.. 
+Object.freeze(movie)
+{name: "Avengers", rating: 4.9, industry: "Hollywood"}
+
+movie.rating = 4.9
+4.9
+
+movie.rating = 3
+3
+
+movie
+{name: "Avengers", rating: 4.9, industry: "Hollywood"}
+
+delete movie.name
+false
+
+//add 
+movie.lang = "English"
+"English"
+
+movie
+{name: "Avengers", rating: 4.9, industry: "Hollywood"}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//literal notation -> [ ] .. you can add/update/remove the property.. 
+var movie = {
+    name:'Avengers',
+    rating:4.5,
+    lang:'English'
+}
+undefined
+
+//you can access the property..
+movie['name']
+"Avengers"
+
+movie['rating']
+4.5
+
+//update the property
+movie['rating']=4.8
+4.8
+
+//add the property
+movie['ind']="Hollywood"
+"Hollywood"
+
+movie
+{name: "Avengers", rating: 4.8, lang: "English", ind: "Hollywood"}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+////JSON/////   multiple movies object you can add here using JSON..
+//JavaScript Object Notation//
+
+//This is the way to represent the data..this is unstructured form of data..
+var movies = [  //array.. array of objects refer as JSON.
+    {   //object1
+        name:'Avengers',
+        rating:4.5,
+        lang:'English'
+    },
+    {   //object2
+        name:'Jab We Met',
+        rating:4.8,
+        lang:'Hindi'
+    },
+    {   //object3
+        name:'Mad MAx',
+        rating:3.8,
+        lang:'English',
+        ind:'Hollywood'
+    }
+]
+
+movies[0]
+{name: "Avengers", rating: 4.5, lang: "English"}
+
+movies[0].lang
+"English"
+
+//give only the name of the movie..
+movies.map( (data) => {return data.name} )
+["Avengers", "Jab We Met", "Mad MAx"]
+
+//using for loop..
+for(mymovies of movies) {
+    console.log(mymovies.name)
+}
+
+Avengers
+Jab We Met
+Mad MAx
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//// using "for in" loop..  helps in Iterating over the object..
+//This is the object..
+var movie = {
+    name:'Avengers',
+    rating:4.5,
+    lang:'English'
+}
+
+//I want to bring the keys of the object..
+for(key in movie){
+    console.log(key)
+}
+
+name
+rating
+lang
+
+for(abc in movie){
+    console.log(abc)
+}
+
+name
+rating
+lang
+
+//If you want values of key
+for(key in movie){
+    console.log(movie[key])
+}
+
+Avengers
+4.5
+English
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//One array can have another array..Object key can have array also..
+var movie = {
+    name:'Avengers',
+    rating:4.5,
+    lang:'English',
+    starcast: {
+        male:['a','b','c'],
+        female:['x','y','z']
+    }
+}
+
+movie.starcast
+{male: Array(3), female: Array(3)}
+
+movie.starcast.male
+(3) ["a", "b", "c"]
+
+movie.starcast.male[0]
+"a"
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+###Object Methods:   reusability
+-------------------
+//when function assign to variable it becomes method
+var calc = {
+    sum: function(a,b) {return a+b},
+    sub: (a,b) => {return a-b},   //this is arrow function..
+}
+
+calc.sum(30,20)
+50
+
+calc.sub(30,20)
+10
+
+//It contains 2 operations..
+var dbQuery = {
+    find: (table) => {return `Select * from ${table}`},
+    insert: (table, data) => {return `insert into ${table} name, city values(${data.name}, ${data.city})`}
+}
+
+dbQuery.find('students')
+"Select * from students"  //output
+
+dbQuery.insert('employee',{name:'John',city:'Delhi'} )
+"insert into employee name, city values(John,Delhi)"  //output
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 
